@@ -35,7 +35,7 @@ public class Main {
 
         if(input.length() < 3)
         {
-            outputResult("Exception throws!");
+            outputResult("throws Exception!");
         }
         else if(convertInputIntoArabic(input) == false)
         {
@@ -133,7 +133,7 @@ public class Main {
         }
         else
         {
-            outputResult("Exception throws!");
+            outputResult("throws Exception!");
             System.exit(0);
         }
 
@@ -166,7 +166,7 @@ public class Main {
             case "X":
                 return 10;
             default:
-                outputResult("Exception throws!");
+                outputResult("throws Exception!");
                 System.exit(0);
         }
         return 0;
@@ -178,7 +178,7 @@ public class Main {
         String romanNum = null;
         if(arabicNum < 1 || arabicNum > 100)
         {
-            outputResult("Exception throws!");
+            outputResult("throws Exception!");
             System.exit(0);
         }
         else if(arabicNum <= 10)
@@ -307,7 +307,7 @@ public class Main {
         int result = 0;
         if((a<1 || a>10) || (b<1 || b>10))
         {
-            outputResult("Exception throws!");
+            outputResult("throws Exception!");
             System.exit(0);
         }
         else
@@ -327,7 +327,7 @@ public class Main {
                     result = a / b;
                     break;
                 default:
-                    outputResult("Exception throws!");
+                    outputResult("throws Exception!");
                     System.exit(0);
             }
         }
