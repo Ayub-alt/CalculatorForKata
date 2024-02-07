@@ -27,15 +27,14 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) throws Exception {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Input:");
         String input = scanner.nextLine();
 
         if(input.length() < 3)
         {
-            outputResult("throws Exception!");
+            throw new Exception("throws Exception!");
         }
         else if(convertInputIntoArabic(input) == false)
         {
@@ -97,8 +96,7 @@ public class Main {
 
 
     //Method to convert input to roman numbers.
-    static void convertInputIntoRoman(String  input)
-    {
+    static void convertInputIntoRoman(String  input) throws Exception {
         String[] arrayOfNumbers = null;
         int a =0, b = 0;
         char operation = '.';
@@ -133,16 +131,14 @@ public class Main {
         }
         else
         {
-            outputResult("throws Exception!");
-            System.exit(0);
+            throw new Exception("throws Exception!");
         }
 
         outputResult(String.valueOf(convertFromArabicIntoRoman(calculateValues(a, b, operation))));
     }
 
     //Method where the conversion from roman to arabic happens
-    static int convertFromRomanIntoArabic(String input)
-    {
+    static int convertFromRomanIntoArabic(String input) throws Exception {
         switch (input)
         {
             case "I":
@@ -166,20 +162,16 @@ public class Main {
             case "X":
                 return 10;
             default:
-                outputResult("throws Exception!");
-                System.exit(0);
+                throw new Exception("throws Exception!");
         }
-        return 0;
     }
 
     //Method to convert arabic to roman numbers.
-    static String convertFromArabicIntoRoman(int arabicNum)
-    {
+    static String convertFromArabicIntoRoman(int arabicNum) throws Exception {
         String romanNum = null;
         if(arabicNum < 1 || arabicNum > 100)
         {
-            outputResult("throws Exception!");
-            System.exit(0);
+            throw new Exception("throws Exception!");
         }
         else if(arabicNum <= 10)
         {
@@ -302,13 +294,11 @@ public class Main {
 
 
     //Method to calculate.
-    static int calculateValues(int a, int b, char operation)
-    {
+    static int calculateValues(int a, int b, char operation) throws Exception {
         int result = 0;
         if((a<1 || a>10) || (b<1 || b>10))
         {
-            outputResult("throws Exception!");
-            System.exit(0);
+            throw new Exception("throws Exception!");
         }
         else
         {
@@ -327,8 +317,7 @@ public class Main {
                     result = a / b;
                     break;
                 default:
-                    outputResult("throws Exception!");
-                    System.exit(0);
+                    throw new Exception("throws Exception!");
             }
         }
         return result;
